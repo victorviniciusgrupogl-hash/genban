@@ -11,10 +11,6 @@ export default defineConfig({
     },
   },
   build: {
-    // Gera o build no "root" do repositório para servir como site estático
-    // (ex.: GitHub Pages/Cloudflare Pages), mantendo `assets/`, `favicon.svg`, etc.
-    outDir: '.',
-    emptyOutDir: false,
     target: 'es2020',
     sourcemap: false,
     rollupOptions: {
