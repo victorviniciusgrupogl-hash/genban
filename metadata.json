@@ -1,0 +1,5 @@
+{
+  "name": "Gerenciador de Banca",
+  "description": "Sistema de gerenciamento de banca para o mercado financeiro com acesso para Admins, Experts e Alunos.",
+  "requestFramePermissions": []
+}

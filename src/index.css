@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Inter", ui-monospace, SFMono-Regular, monospace;
+
+  --animate-marquee: marquee 60s linear infinite;
+
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+  }
+}
+
+@layer base {
+  :root {
+    --background: #f8fafc;
+    --foreground: #0f172a;
+    --card: #ffffff;
+    --card-foreground: #0f172a;
+    --border: #e2e8f0;
+    --primary: #10b981;
+    --primary-foreground: #000000;
+    --success: #10b981;
+    --danger: #ef4444;
+  }
+
+  .dark {
+    color-scheme: dark;
+    --background: #09090b;
+    --foreground: #fafafa;
+    --card: #18181b;
+    --card-foreground: #fafafa;
+    --border: #27272a;
+    --primary: #10b981;
+    --primary-foreground: #000000;
+    --success: #10b981;
+    --danger: #ef4444;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   react-day-picker v9 — GREEN OVERRIDE (anula o azul padrão)
+   O import do style.css padrão define azul como accent-color.
+   Essas regras sobreescrevem TUDO com verde #10B981.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Variáveis CSS raiz do DayPicker — maior especificidade */
+:root,
+.rdp-root,
+[data-rdp-root] {
+  --rdp-accent-color:                      #10b981 !important;
+  --rdp-accent-background-color:           rgba(16, 185, 129, 0.15) !important;
+  --rdp-range_middle-background-color:     rgba(16, 185, 129, 0.15) !important;
+  --rdp-range_start-date-background-color: #10b981 !important;
+  --rdp-range_end-date-background-color:   #10b981 !important;
+  --rdp-today-color:                       #10b981 !important;
+  --rdp-selected-border:                   2px solid #10b981 !important;
+  --rdp-outside-opacity:                   0.35;
+  --rdp-day-height:                        36px;
+  --rdp-day-width:                         36px;
+  --rdp-day_button-height:                 34px;
+  --rdp-day_button-width:                  34px;
+}
+
+/* Setas de navegação */
+.rdp-chevron,
+.rdp-nav_icon,
+.rdp-button_previous svg,
+.rdp-button_next svg {
+  fill: #10b981 !important;
+  color: #10b981 !important;
+}
+.rdp-button_previous:hover,
+.rdp-button_next:hover {
+  background-color: rgba(16, 185, 129, 0.12) !important;
+}
+
+/* Dia de hoje */
+.rdp-today:not(.rdp-outside) {
+  color: #10b981 !important;
+  font-weight: 700 !important;
+}
+
+/* Dia selecionado (single / start / end de range) */
+.rdp-selected .rdp-day_button,
+.rdp-day_button[aria-selected="true"],
+.rdp-range_start .rdp-day_button,
+.rdp-range_end   .rdp-day_button {
+  background-color: #10b981 !important;
+  color: #000 !important;
+  font-weight: 700 !important;
+  border-color: #10b981 !important;
+}
+
+/* Meio do range */
+.rdp-range_middle {
+  background-color: rgba(16, 185, 129, 0.15) !important;
+}
+.rdp-range_middle .rdp-day_button {
+  color: #059669 !important;
+}
+
+/* Hover em dias */
+.rdp-day_button:hover:not([disabled]):not([aria-selected="true"]) {
+  background-color: rgba(16, 185, 129, 0.12) !important;
+  color: #10b981 !important;
+}
+
+/* Focus ring */
+.rdp-day_button:focus-visible {
+  outline: 2px solid #10b981 !important;
+  outline-offset: 2px !important;
+}
+
+/* Cabeçalho do mês */
+.rdp-month_caption,
+.rdp-caption_label {
+  color: inherit !important;
+}
+
+/* Remove qualquer background azul remanescente */
+.rdp-day_button[data-selected="true"] {
+  background-color: #10b981 !important;
+  color: #000 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Global
+   ═══════════════════════════════════════════════════════════════ */
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  accent-color: #10b981;
+}
+
+/* Focus rings verdes em todo o app */
+* {
+  --tw-ring-color: rgba(16, 185, 129, 0.3);
+}
+
+:focus-visible {
+  outline-color: #10b981 !important;
+}
